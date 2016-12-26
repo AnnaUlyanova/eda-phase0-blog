@@ -1,0 +1,12 @@
+{{> homepage-header }}
+  <h1>Publish New Post</h1>
+
+    <form action="/admin" method="post">
+        <input type="hidden" name="id" value="{{id}}">
+        <input type="text" name="quote" placeholder="Quote">
+        <input type="number" name="sprint_num" placeholder="Sprint #">
+        <input type="text" name="blog_type" placeholder="Technical or Cultural blog">
+        <input type="text" name="title" placeholder="Your post title">
+        <input type="text" name="content" placeholder="Write your post here">
+        <button type="submit" name="button">Publish!</button>
+    </form>

@@ -1,0 +1,14 @@
+{{> homepage-header }}
+  <h1>List of frogs</h1>
+  <div>
+  {{#each posts}}
+    <div>
+      <a href="/post/{{id}}">
+        {{id}}
+        {{quote}}
+        Sprint {{sprint_num}}
+        {{blog_type}} blog
+      </a>
+  </div>
+  {{/each}}
+</div>
