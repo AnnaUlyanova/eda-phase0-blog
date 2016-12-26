@@ -61,11 +61,17 @@ function getPostById (req, res) {
   .then (function (posts) {
     var data = {
       title: "Blog Post Page",     // !!!CHANGE TO DYNAMIC TITLE
-      actualPost: req.params.id
+      actualPost: posts[req.params.id-1]
     }
-    res.render('cultural-blog', data)
+    if (posts[req.params.id-1].blog_type === "cultural") {
+      res.render('cultural-blog', data)
+    } else if (posts[req.params.id-1].blog_type === "technical") {
+      res.render('technical-blog', data)
+    }
+
+
   })
   .catch(function (err) {
     res.status(500).send('Error' + err.message)
-  })  
+  })
 }

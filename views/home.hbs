@@ -1,14 +1,25 @@
 {{> homepage-header }}
-  <h1>List of frogs</h1>
-  <div>
-  {{#each posts}}
-    <div>
-      <a href="/post/{{id}}">
-        {{id}}
-        {{quote}}
-        Sprint {{sprint_num}}
-        {{blog_type}} blog
-      </a>
+<div class="row">
+    <div class="twelve columns">
+      <button class="tech-cult" id='hide-cult'>Show Technical blog posts only</button>
+      <button class="tech-cult" id='hide-tech'>Show Cultural blog posts only</button>
+      <button class="tech-cult" id='show-all'>Show All</button>
+    </div>
   </div>
+
+<div class="row">
+  {{#each posts}}
+    <div class="one-third column">
+      <a href="/post/{{id}}">
+        <article>
+          <p>
+            <span class="article-sprint">{{id}}</span><br>
+            <span class="quote">{{quote}}</span><hr class="hr-main">
+            <span class="article-sprint">Sprint {{sprint_num}}.
+            <em>{{blog_type}} blog</em></span>
+          </p>
+        </article>
+      </a>
+    </div>
   {{/each}}
 </div>
