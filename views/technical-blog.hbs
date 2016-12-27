@@ -1,4 +1,19 @@
-{{> post-page-header }}
-Technical Blog
-{{actualPost.title}}
-{{actualPost.content}}
+{{> technical-post-header }}
+
+<section>
+  <div class="row">
+    <div class="twelve columns">
+
+        <p class="post-article">
+            {{actualPost.content}}
+        </p>
+    </div>
+  </div>
+
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script>
+  $("p").html('{{actualPost.content}}').text();
+</script>

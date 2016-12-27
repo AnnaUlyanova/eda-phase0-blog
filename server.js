@@ -29,5 +29,5 @@ server.get('/', routes.getHomePage)
 server.get('/admin', routes.getNewPostPage)
 server.post('/admin', routes.addNewPost)
 server.get('/post/:id', routes.getPostById)
-
-//server.get('/blog/:title', index.getBlog)
+server.get('/contact', routes.getContactPage)
+server.get('/projects', routes.getProjectsPage)

@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="six columns">
+    {{> navigation}}
+        <div class="welcome">
+      <h1>Let's talk :)</h1>
+        </div>
+      </div>
+    <div class="six columns">
+      <img src="images/tui-main.jpg" alt="Tui Kowhai">
+    </div>
+</div>
+
+<div class="row">
+<div class="contact-form twelve columns">
+<form action="/contact", name="contact", method="POST">
+  <div class="row">
+  <input class="four columns" name="firstname" placeholder="Your first name" id="first-name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your first name'">
+  <input class="four columns" name="lastname" placeholder="Your last name" id="last-name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your last name'">
+  </div>
+  <div class="row">
+  <input class="eight columns" name="emailaddress" placeholder="Your email address" id="email-address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'">
+</div>
+<div class="row">
+  <textarea class="eight columns" name="subject" placeholder="Your message" id="text-area" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your message'"></textarea>
+</div>
+<div class="row">
+  <input class="three columns" name="submit" type="submit" value="Send" class="button" id="form-button">
+</div>
+</form>
+</div>
+</div>
+
+{{> footer}}

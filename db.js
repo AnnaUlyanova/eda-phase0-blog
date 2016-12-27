@@ -5,7 +5,8 @@ var connection = require('knex')(config)
 
 module.exports = {
   getAllPosts: getAllPosts,
-  insertNewPost: insertNewPost
+  insertNewPost: insertNewPost,
+  getProjects: getProjects
 }
 
 function getAllPosts() {
@@ -15,4 +16,8 @@ function getAllPosts() {
 function insertNewPost (post) {
   return connection ('blogposts')
     .insert({quote: post.quote, sprint_num: post.sprint_num, blog_type: post.blog_type, title: post.title, content: post.content})
+}
+
+function getProjects() {
+  return connection ('projects')
 }

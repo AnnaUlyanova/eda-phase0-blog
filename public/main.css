@@ -178,7 +178,7 @@ footer {
 
 
 /******************
-CONTACT FORM
+CONTACT AND ADMIN FORMS
 *****************/
 .contact-form {
   padding-bottom: 10px;
@@ -191,7 +191,7 @@ CONTACT FORM
   font-family: 'Gentium Basic', serif;
 }
 
-#first-name, #last-name, #email-address, #form-button {
+#first-name, #last-name, #email-address, #form-button, #quote, #sprint, #type, #title {
    margin-top: 20px;
    height: 40px;
   }
@@ -199,10 +199,14 @@ CONTACT FORM
     margin-top: 20px;
     height: 120px;
   }
-  #first-name, #last-name, #email-address, #text-area {
+  #post-area {
+    margin-top: 20px;
+    height: 300px;
+  }
+  #first-name, #last-name, #email-address, #text-area, #quote, #sprint, #type, #title, #post-area {
      border: 2px solid #FFBF00;
   }
-  #first-name:focus, #last-name:focus, #email-address:focus, #text-area:focus {
+  #first-name:focus, #last-name:focus, #email-address:focus, #text-area:focus, #quote:focus, #sprint:focus, #type:focus, #title:focus, #post-area:focus {
     outline: none;
      box-shadow: 0 0 10px #FFBF00;
   }

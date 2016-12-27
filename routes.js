@@ -3,6 +3,8 @@ var express = require('express')
 var environment = process.env.NODE_ENV || 'development'
 var config = require('./knexfile')[environment]
 var knex = require('knex')(config)
+var sendmail = require('sendmail')();
+
 
 var db = require('./db.js')
 
@@ -10,7 +12,9 @@ module.exports = {
   getHomePage: getHomePage,
   addNewPost: addNewPost,
   getNewPostPage: getNewPostPage,
-  getPostById: getPostById
+  getPostById: getPostById,
+  getContactPage: getContactPage,
+  getProjectsPage: getProjectsPage
 }
 
 // load main page with the list of all posts
@@ -59,13 +63,19 @@ function addNewPost (req, res) {
 function getPostById (req, res) {
   db.getAllPosts()
   .then (function (posts) {
-    var data = {
-      title: "Blog Post Page",     // !!!CHANGE TO DYNAMIC TITLE
-      actualPost: posts[req.params.id-1]
-    }
-    if (posts[req.params.id-1].blog_type === "cultural") {
+    if (posts[req.params.id-1].blog_type === "Cultural") {
+      var data = {
+        title: "Anna Ulyanova | EDA BLOG | " + posts[req.params.id-1].title,
+        actualPost: posts[req.params.id-1],
+        layout: "cultural"
+      }
       res.render('cultural-blog', data)
-    } else if (posts[req.params.id-1].blog_type === "technical") {
+    } else if (posts[req.params.id-1].blog_type === "Technical") {
+      var data = {
+        title: "Anna Ulyanova | EDA BLOG | " + posts[req.params.id-1].title,
+        actualPost: posts[req.params.id-1],
+        layout: "technical"
+      }
       res.render('technical-blog', data)
     }
 
@@ -74,4 +84,25 @@ function getPostById (req, res) {
   .catch(function (err) {
     res.status(500).send('Error' + err.message)
   })
+}
+
+function getProjectsPage (req, res) {
+  db.getProjects()
+    .then(function (projects) {
+      var data = {
+      title: "Anna Ulyanova | EDA Blog | Projects",
+      projects: projects
+      }
+      res.render("projects", data)
+    })
+    .catch(function (err) {
+      res.status(500).send('Error' + err.message)
+    })
+}
+
+function getContactPage (req, res) {
+  var data = {
+    title: "Anna Ulyanova | EDA Blog | Contact"
+  }
+  res.render("contact", data)
 }

@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="six columns">
+      {{> navigation}}
+      <div class="welcome">
+      <h1><br>Projects</h1>
+    </div>
+  </div>
+    <div class="six columns">
+      <img src="images/tui-main.jpg" alt="Tui Kowhai">
+    </div>
+</div>
+
+<div class="row">
+    {{#each projects}}
+      <div class="five columns">
+
+        <a href="{{url}}" target="_blank">
+          <article class="project-card">
+            <p><span class="article-sprint">#{{id}}</span><br><span class="quote project-card">{{name}}
+            <hr class="hr-main">
+            <span class="article-sprint">Sprint {{sprint_num}}</span></p>
+          </article>
+        </a>
+
+      </div>
+    {{/each}}
+</div>
