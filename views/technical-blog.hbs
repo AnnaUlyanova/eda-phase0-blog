@@ -5,7 +5,7 @@
     <div class="twelve columns">
 
         <p class="post-article">
-            {{actualPost.content}}
+            {{{actualPost.content}}}
         </p>
     </div>
   </div>
@@ -15,5 +15,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 <script>
-  $("p").html('{{actualPost.content}}').text();
+  var content = $('p').text()
+   $("p").html(content).val();
 </script>

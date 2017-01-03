@@ -3,7 +3,7 @@ var express = require('express')
 var environment = process.env.NODE_ENV || 'development'
 var config = require('./knexfile')[environment]
 var knex = require('knex')(config)
-var sendmail = require('sendmail')();
+var helpers = require('handlebars-helpers')();
 
 
 var db = require('./db.js')
@@ -106,3 +106,17 @@ function getContactPage (req, res) {
   }
   res.render("contact", data)
 }
+
+// function getContactPage (req, res) {
+//   sendgrid.send({
+//     to: 'a.ulyanova89@gmail.com',
+//     from: 'a.ulyanova89@gmail.com',
+//     subject: 'Hello World',
+//     text: 'Email from node js.'
+//   }, function (err, json) {
+//     if (err) {
+//       return res.send('there is an error')
+//     }
+//     res.send('the email has been send!')
+//   })
+// }

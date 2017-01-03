@@ -7,10 +7,12 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
+    "handlebars-helpers": "^0.7.5",
     "knex": "^0.12.6",
     "node-inspector": "^0.12.8",
     "nodemailer": "^2.7.0",
     "nodemon": "^1.11.0",
+    "sendgrid": "^4.7.1",
     "sendmail": "^1.1.1",
     "sqlite3": "^3.1.8"
   },
