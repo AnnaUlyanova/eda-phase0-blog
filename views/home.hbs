@@ -11,7 +11,7 @@
 {{#grouped_each 3 posts}}
 <div class="row">
     {{#each this}}
-    <div class="one-third column">
+    <div class="one-third column {{blog_type}}">
       <a href="/post/{{id}}">
         <article>
           <p>
@@ -25,5 +25,18 @@
 
     </div>
   {{/each}}
+
 </div>
 {{/grouped_each}}
+
+<div class="one-third column">
+  <a href="/admin">
+      <article>
+
+
+      <p>
+        <span class="quote">+<br>Add New Post</span><hr class="hr-main">
+      </p>
+      </article>
+  </a>
+</div>

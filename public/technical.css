@@ -213,7 +213,7 @@ CSS FOR APPLE JS IMG, BLOG POST-10
 }
 
 .visible {
-  background-image: url("../img/apple.jpg");
+  background-image: url("/images/apple.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
