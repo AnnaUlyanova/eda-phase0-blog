@@ -14,7 +14,9 @@ module.exports = {
   getNewPostPage: getNewPostPage,
   getPostById: getPostById,
   getContactPage: getContactPage,
-  getProjectsPage: getProjectsPage
+  getProjectsPage: getProjectsPage,
+  postComment: postComment,
+  getComments: getComments
 }
 
 // load main page with the list of all posts
@@ -61,29 +63,35 @@ function addNewPost (req, res) {
 
 //load page for each post by ID
 function getPostById (req, res) {
-  db.getAllPosts()
-  .then (function (posts) {
-    if (posts[req.params.id-1].blog_type === "Cultural") {
-      var data = {
-        title: "Anna Ulyanova | EDA BLOG | " + posts[req.params.id-1].title,
-        actualPost: posts[req.params.id-1],
-        layout: "cultural"
-      }
-      res.render('cultural-blog', data)
-    } else if (posts[req.params.id-1].blog_type === "Technical") {
-      var data = {
-        title: "Anna Ulyanova | EDA BLOG | " + posts[req.params.id-1].title,
-        actualPost: posts[req.params.id-1],
-        layout: "technical"
-      }
-      res.render('technical-blog', data)
-    }
+  db.getPostById(req.params.id)
+  //db.getPostsAndComments()
+    .then (function (post) {
+       db.getComments(req.params.id)
+         .then (function (comments) {
+           if (post.blog_type === "Cultural") {
+             var data = {
+               title: "Anna Ulyanova | EDA BLOG | " + post.title,
+               actualPost: post,
+               layout: "cultural",
+               comments: comments
+            }
+            res.render('cultural-blog', data)
+          } else if (post.blog_type === "Technical") {
+              var data = {
+                 title: "Anna Ulyanova | EDA BLOG | " + post.title,
+                 actualPost: post,
+                 layout: "technical",
+                 comments: comments
+             }
+             res.render('technical-blog', data)
+           }
+    })
 
-
-  })
+    })
   .catch(function (err) {
-    res.status(500).send('Error' + err.message)
+    res.status(500).send('Error: ' + err.message)
   })
+
 }
 
 function getProjectsPage (req, res) {
@@ -100,12 +108,47 @@ function getProjectsPage (req, res) {
     })
 }
 
+//load Contact Page
 function getContactPage (req, res) {
   var data = {
     title: "Anna Ulyanova | EDA Blog | Contact"
   }
   res.render("contact", data)
 }
+
+//post new comment
+function postComment (req, res) {
+    var id = Number(req.body.id)
+    var comment = {
+      post_id: Number(req.body.id),
+      name: req.body.name,
+      comment: req.body.comment
+  }
+  db.insertComment(comment)
+    .then(function() {
+      res.redirect('/post/' + id)
+    })
+    .catch(function (err) {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
+  })
+    }
+
+//show all Comments
+function getComments (req, res) {
+  db.getComments()
+    .then(function (comments) {
+      var id = Number(req.body.id)
+      var data = {
+        comments: comments
+      }
+      res.render('users-comments', data)
+    })
+    .catch(function (err) {
+      res.status(500).send('Error' + err.message)
+    })
+}
+
+
 
 // function getContactPage (req, res) {
 //   sendgrid.send({

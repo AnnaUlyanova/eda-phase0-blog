@@ -179,7 +179,7 @@ footer {
 
 
 /******************
-CONTACT AND ADMIN FORMS
+CONTACT, COMMENT AND ADMIN FORMS
 *****************/
 .contact-form {
   padding-bottom: 10px;
@@ -188,6 +188,12 @@ CONTACT AND ADMIN FORMS
   -webkit-box-shadow: 7px 9px 10px 0px rgba(92,92,92,1);
   -moz-box-shadow: 7px 9px 10px 0px rgba(92,92,92,1);
   box-shadow: 7px 9px 10px 0px rgba(92,92,92,1);
+  border-radius: 10px;
+  font-family: 'Gentium Basic', serif;
+}
+
+.comment-form {
+  padding: 20px;
   border-radius: 10px;
   font-family: 'Gentium Basic', serif;
 }
@@ -230,6 +236,32 @@ margin-bottom: 15px;
   outline: none;
    box-shadow: 0 0 10px #FFBF00;
 }
+
+.comments {
+  font-family: 'Gentium Basic', serif;
+  padding: 20px;
+}
+
+.comments h5 {
+  padding: 0;
+  margin: 0;
+  font-weight: bolder;
+}
+
+.comments h6 {
+  font-size: 1.2em;
+}
+
+.user-comment {
+  margin-bottom: 25px;
+  border-right: 1px solid #5c5c5c;
+  border-bottom: 1px solid #5c5c5c;
+  -webkit-box-shadow: 7px 9px 10px 0px rgba(92,92,92,1);
+  -moz-box-shadow: 7px 9px 10px 0px rgba(92,92,92,1);
+  box-shadow: 7px 9px 10px 0px rgba(92,92,92,1);
+  border-radius: 10px;
+}
+
 
 /************
 PROJECT PAGE

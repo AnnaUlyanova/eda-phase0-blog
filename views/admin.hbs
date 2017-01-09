@@ -5,19 +5,18 @@
   <div class="row">
     <div class="contact-form twelve columns">
       <form action="/admin" method="post">
-        <input type="hidden" name="id" value="{{id}}">
         <div class="row">
-          <input class="eleven columns" type="text" name="quote" placeholder="Quote" id="quote" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Quote'">
-        </div>
-        <div class="row">
-          <input class="two columns" type="number" name="sprint_num" placeholder="Sprint #" id="sprint">
-          <input class="four columns" type="text" list="blog_type" name="blog_type" placeholder="Technical or Cultural blog" id="type">
-            <datalist id="blog_type">
-              <option value="Cultural">
-              <option value="Technical">
-            </datalist>
-          <input class="five columns" type="text" name="title" placeholder="Your post title" id="title" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your post title'">
-        </div>
+            <input class="eleven columns" type="text" name="quote" placeholder="Quote" id="quote" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Quote'">
+          </div>
+          <div class="row">
+            <input class="two columns" type="number" name="sprint_num" placeholder="Sprint #" id="sprint">
+            <input class="four columns" type="text" list="blog_type" name="blog_type" placeholder="Technical or Cultural blog" id="type">
+              <datalist id="blog_type">
+                <option value="Cultural">
+                <option value="Technical">
+              </datalist>
+            <input class="five columns" type="text" name="title" placeholder="Your post title" id="title" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your post title'">
+          </div>
         <div class="row">
           <textarea class="eleven columns" type="text" name="content" placeholder="Write your post here" id="post-area" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Write your post here'"></textarea>
         </div>

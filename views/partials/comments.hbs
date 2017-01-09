@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="comment-form ten columns">
+  <h2>Add a comment</h2>
+
+  <form action="/" method="post">
+    <input type="hidden" name="id" value={{actualPost.id}}>
+    <div class="row">
+
+      <input class="eight columns" id="first-name" type="text" name="name" placeholder="Your Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Name'">
+
+      <div class="row">
+        <textarea class="eight columns" type="text" name="comment" placeholder="Write your comments here" id="post-area" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Write your post here'"></textarea>
+      </div>
+
+    <div class="row">
+      <button type="submit" name="button" class="button three columns" id="form-button">Send</button>
+    </div>
+  </form>
+</div>
+</div>
+
+</div>
