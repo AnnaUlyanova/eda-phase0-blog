@@ -1,7 +1,10 @@
 {
   "name": "eda-phase0-blog",
   "version": "1.0.0",
-  "description": "",
+  "description": "blog created during phase 0 / EDA bootcamp",
+  "engines": {
+    "node": "6.9.1"
+  },
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.15.2",
@@ -12,6 +15,7 @@
     "node-inspector": "^0.12.8",
     "nodemailer": "^2.7.0",
     "nodemon": "^1.11.0",
+    "pg": "^6.1.2",
     "sendgrid": "^4.7.1",
     "sendmail": "^1.1.1",
     "sqlite3": "^3.1.8"
@@ -24,7 +28,8 @@
     "debug": "node-debug index",
     "knex": "knex",
     "dev": "nodemon index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "knex migrate:latest"
   },
   "repository": {
     "type": "git",
