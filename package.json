@@ -13,7 +13,6 @@
     "express-handlebars": "^3.0.0",
     "handlebars-helpers": "^0.7.5",
     "knex": "^0.12.6",
-    "node-inspector": "^0.12.8",
     "nodemailer": "^2.7.0",
     "nodemon": "^1.11.0",
     "pg": "^6.1.2",
@@ -21,16 +20,14 @@
     "sendmail": "^1.1.1",
     "sqlite3": "^3.1.8"
   },
-  "devDependencies": {
-    "node-inspector": "^0.12.8"
-  },
+  "devDependencies": {},
   "scripts": {
     "start": "nodemon index.js",
     "debug": "node-debug index",
     "knex": "knex",
     "dev": "nodemon index",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "knex migrate:latest"
+    "postinstall": "npm run knex migrate:latest"
   },
   "repository": {
     "type": "git",
