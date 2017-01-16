@@ -26,8 +26,7 @@
     "debug": "node-debug index",
     "knex": "knex",
     "dev": "nodemon index",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "npm run knex migrate:latest"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
