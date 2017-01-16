@@ -4,7 +4,7 @@ exports.up = function(knex, Promise) {
       table.increments('id').primary()
       table.string('name')
       table.string('comment')
-      table.string('post_id').references('blogposts.id')
+      table.integer('post_id').references('blogposts.id')
     })
 };
 
